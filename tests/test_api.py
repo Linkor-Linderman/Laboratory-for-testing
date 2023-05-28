@@ -87,8 +87,7 @@ class TestClass:
 
     def test_post_form_with_extra_fields_http_status_without_error(self):
         response = requests.post(BASE_URL, data={"number": 6, "some": 9897078})
-        expected_result_size = 132
-        assert post_for_result(-1).status_code == 200
+        assert response.status_code == 200
 
     def test_post_form_with_extra_fields_return_correct_result(self):
         response = requests.post(BASE_URL, data={"number": 6, "some": 9897078})
